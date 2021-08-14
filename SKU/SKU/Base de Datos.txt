@@ -1,0 +1,21 @@
+﻿create database prueba_abank
+
+create table SKU
+(
+id varchar(10) primary key ,
+descripcion varchar(300),
+existencias int,
+estado boolean
+)
+
+insert into sku VALUES(1,'Description 1', 100, true)
+
+create table OrdenDetalle
+(
+	id int AUTO_INCREMENT primary key,
+   	id_sku varchar(10),
+    cantidad int,
+    estado boolean,
+    fecha_ingreso date
+    FOREIGN KEY (id_sku) REFERENCES SKU(id)
+)
