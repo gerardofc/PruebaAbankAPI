@@ -23,7 +23,7 @@ namespace SKU.Controllers
                 using (MySqlConnection conn = MySQLConexion.obtenerConexion())
                 {
                     conn.Open();
-                    MySqlCommand cmd = new MySqlCommand("select * from ordendetalle",conn);
+                    MySqlCommand cmd = new MySqlCommand("select ordendetalle.id,sku.descripcion as id_sku,ordendetalle.cantidad,ordendetalle.estado,ordendetalle.fecha_ingreso  from ordendetalle inner join sku on sku.id=ordendetalle.id_sku where sku.estado=true", conn);
                     using (var reader = cmd.ExecuteReader())
                     {
                         while(reader.Read())

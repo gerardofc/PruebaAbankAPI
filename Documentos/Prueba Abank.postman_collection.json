@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "983e0f7b-d83f-46d7-a851-a82e8c40e62b",
+		"name": "Prueba Abank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ObtenerListaSKU",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44331/api/SKU",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44331",
+					"path": [
+						"api",
+						"SKU"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarSKU",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44331/api/SKU/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44331",
+					"path": [
+						"api",
+						"SKU",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminarsku",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44331/api/SKU/eliminarsku/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44331",
+					"path": [
+						"api",
+						"SKU",
+						"eliminarsku",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "agregarsku",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n        \"id_sku\": \"2\",\r\n        \"descripcion\": \"Description 1\",\r\n        \"existencia\": 100,\r\n        \"estado\": true\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44331/api/SKU/agregarsku/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44331",
+					"path": [
+						"api",
+						"SKU",
+						"agregarsku",
+						""
+					],
+					"query": [
+						{
+							"key": "[{\"id_sku\"",
+							"value": " \"1\",\"descripcion\": \"Description 1\",\"existencia\": 100,\"estado\": false}]",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "agregarOrden",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id_orden\":1,\"id_sku\":\"1\",\"cantidad\":1,\"estado\":true,\"fecha_ingreso\":\"2021-08-14T00:00:00\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44331/api/OrdenDetalle/agregarOrden",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44331",
+					"path": [
+						"api",
+						"OrdenDetalle",
+						"agregarOrden"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerListaDetalle",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44331/api/OrdenDetalle",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44331",
+					"path": [
+						"api",
+						"OrdenDetalle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancelarorden",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44331/api/OrdenDetalle/cancelarorden/3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44331",
+					"path": [
+						"api",
+						"OrdenDetalle",
+						"cancelarorden",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

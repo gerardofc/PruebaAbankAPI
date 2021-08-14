@@ -23,7 +23,7 @@ namespace SKU.Controllers
                 using (MySqlConnection conn = MySQLConexion.obtenerConexion())
                 {
                     conn.Open();
-                    MySqlCommand cmd = new MySqlCommand("select * from SKU", conn);
+                    MySqlCommand cmd = new MySqlCommand("select * from SKU where estado=true", conn);
 
                     using (var reader = cmd.ExecuteReader())
                     {

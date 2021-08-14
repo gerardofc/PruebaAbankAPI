@@ -1,4 +1,5 @@
-﻿create database prueba_abank
+﻿create database prueba_abank;
+use prueba_abank;
 
 create table SKU
 (
@@ -6,9 +7,18 @@ id varchar(10) primary key ,
 descripcion varchar(300),
 existencias int,
 estado boolean
-)
+);
 
-insert into sku VALUES(1,'Description 1', 100, true)
+insert into sku VALUES('1','Manzana', 100, true);
+insert into sku VALUES('2','Pera', 100, true);
+insert into sku VALUES('3','Sandia', 100, true);
+insert into sku VALUES('4','Melon', 100, true);
+insert into sku VALUES('5','Guineo', 100, true);
+insert into sku VALUES('6','Fresa', 100, true);
+insert into sku VALUES('7','Melocoton', 100, true);
+insert into sku VALUES('8','Mango', 100, true);
+insert into sku VALUES('9','Paterna', 100, true);
+insert into sku VALUES('10','uva', 100, true);
 
 create table OrdenDetalle
 (
@@ -16,6 +26,12 @@ create table OrdenDetalle
    	id_sku varchar(10),
     cantidad int,
     estado boolean,
-    fecha_ingreso date
+    fecha_ingreso date,
     FOREIGN KEY (id_sku) REFERENCES SKU(id)
-)
+);
+
+INSERT INTO ordendetalle (id_sku, cantidad, estado, fecha_ingreso) VALUES ('2', 1, 1, '2021-08-12');
+INSERT INTO ordendetalle (id_sku, cantidad, estado, fecha_ingreso) VALUES ('1', 10, 1, '2021-08-13');
+INSERT INTO ordendetalle (id_sku, cantidad, estado, fecha_ingreso) VALUES ('3', 5, 1, '2021-08-12');
+INSERT INTO ordendetalle (id_sku, cantidad, estado, fecha_ingreso) VALUES ('1', 5, 1, '2021-08-14');
+INSERT INTO ordendetalle (id_sku, cantidad, estado, fecha_ingreso) VALUES ('2', 3, 1, '2021-08-14');

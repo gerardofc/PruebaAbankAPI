@@ -1,0 +1,23 @@
+<form  [formGroup]="form" (ngSubmit)="agregarsku()">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control" formControlName="id" placeholder="ID">
+        </div>
+    </div>
+    <BR>
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control" formControlName="descripcion" placeholder="DESCRIPCION">
+        </div>
+    </div>
+    <BR>
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control" formControlName="existencia" placeholder="EXISTENCIA">
+        </div>
+    </div>
+    <BR>    
+    <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" [disabled]="form.invalid" type="submit">Agregar</button>
+    </div>
+</form>

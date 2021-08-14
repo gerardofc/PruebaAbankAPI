@@ -1,0 +1,26 @@
+<table class="table">
+    <TR>
+        <td>ID</td>
+        <td> SKU</td>
+        <td>CANTIDAD</td>
+        <td>ACRIVO</td>
+        <td>FECHA INGRESO</td>
+        <td>ACCION</td>
+    </TR>
+</table>
+<table class="table">
+    <thead>
+    <tr *ngFor="let orden of Ordendetalleservice.listar">
+        <td>{{orden.id_orden}}</td>
+        <td>{{orden.id_sku}}</td>
+        <td>{{orden.cantidad}}</td>
+        <td><input type="checkbox" [checked]="orden.estado" /></td>
+        <td>{{orden.fecha_ingreso | date:'short':'UTC'}}</td>
+        <td>
+            <button type="button" class="btn btn-outline-danger" (click)="CancelarOrden(orden.id_orden)">
+                Eliminar
+              </button>
+        </td>
+    </tr>
+</thead>
+</table>

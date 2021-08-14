@@ -1,0 +1,25 @@
+<div class="container">
+<table class="table">
+    <TR>
+        <td>ID</td>
+        <td>DESCRIPCION</td>
+        <td>EXISTENCIA</td>
+        <td>ACCION</td>
+        
+    </TR>
+</table>
+<table class="table">
+    <thead>
+    <tr *ngFor="let sku of Skuservice.listar">
+        <td>{{sku.id_sku}}</td>
+        <td>{{sku.descripcion}}</td>
+        <td>{{sku.existencia}}</td>
+        <td>
+            <button type="button" class="btn btn-outline-danger" (click)="EliminarSku(sku.id_sku)">
+                Eliminar
+              </button>
+        </td>
+    </tr>
+</thead>
+</table>
+</div>
